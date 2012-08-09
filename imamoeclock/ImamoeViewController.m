@@ -15,6 +15,7 @@
 @property (retain, nonatomic) JDGroupedFlipNumberView *minuteFlip;
 @property (retain, nonatomic) IBOutlet UIView *hourView;
 @property (retain, nonatomic) JDGroupedFlipNumberView *hourFlip;
+@property (retain, nonatomic) NSTimer *ctimer;
 
 @end
 
@@ -41,7 +42,7 @@
     self.secondFlip = [[[JDGroupedFlipNumberView alloc] initWithFlipNumberViewCount: 2] autorelease];
     self.secondFlip.delegate = self;
     [self.secondFlip setIntValue:dateComps.second];
-    [self.secondFlip animateUpWithTimeInterval:1];
+    //[self.secondFlip animateUpWithTimeInterval:1.f];
     [self.secondFlip setMaximumValue:59];
     [self.secondFlip setFrame:CGRectMake(0, 0, self.secondView.frame.size.width, self.secondView.frame.size.height)];
     [self.secondView addSubview: self.secondFlip];
@@ -60,6 +61,18 @@
     [self.hourFlip setFrame:CGRectMake(0, 0, self.hourView.frame.size.width, self.hourView.frame.size.height)];
     [self.hourView addSubview:self.hourFlip];
 
+    self.ctimer = [NSTimer scheduledTimerWithTimeInterval:1.0f
+                                              target:self
+                                            selector:@selector(timerDidEnd)
+                                            userInfo:nil
+                                             repeats:YES];
+}
+
+- (void)timerDidEnd
+{
+    //タイマー動作
+    //TODO
+    [self.secondFlip animateToNextNumber];
 }
 
 - (void) groupedFlipNumberView: (JDGroupedFlipNumberView*) groupedFlipNumberView willChangeToValue: (NSUInteger) newValue {
@@ -94,6 +107,16 @@
     [secondView release];
     [minuteView release];
     [hourView release];
+    
+    //タイマーの停止
+    if (self.ctimer) {
+        if ([self.ctimer isValid]) {
+            [self.ctimer invalidate];
+            //停止時にはnilにすること
+            [self setCtimer:nil];
+        }
+    }
+    
     [super dealloc];
 }
 @end
