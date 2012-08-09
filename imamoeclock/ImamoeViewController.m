@@ -63,7 +63,7 @@
 }
 
 - (void) groupedFlipNumberView: (JDGroupedFlipNumberView*) groupedFlipNumberView willChangeToValue: (NSUInteger) newValue {
-    NSLog(@"hoge:%d",newValue);
+    //NSLog(@"hoge:%d",newValue);
     if (newValue == 0) {
         if ([groupedFlipNumberView isEqual:self.secondFlip]) {
             // next minute

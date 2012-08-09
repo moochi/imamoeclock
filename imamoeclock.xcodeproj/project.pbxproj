@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C035496A15D404D600AB9987 /* imamoe2.png in Resources */ = {isa = PBXBuildFile; fileRef = C035496815D404D600AB9987 /* imamoe2.png */; };
+		C035496B15D404D600AB9987 /* imamoe2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C035496915D404D600AB9987 /* imamoe2@2x.png */; };
 		C0B90DD815D38BEF003A249D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B90DD715D38BEF003A249D /* UIKit.framework */; };
 		C0B90DDA15D38BEF003A249D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B90DD915D38BEF003A249D /* Foundation.framework */; };
 		C0B90DDC15D38BEF003A249D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B90DDB15D38BEF003A249D /* CoreGraphics.framework */; };
@@ -20,13 +22,13 @@
 		C0B90DFE15D38C7D003A249D /* JDFlipNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B90DF915D38C7D003A249D /* JDFlipNumberView.m */; };
 		C0B90DFF15D38C7D003A249D /* JDGroupedFlipNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B90DFB15D38C7D003A249D /* JDGroupedFlipNumberView.m */; };
 		C0B90E0115D38E16003A249D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B90E0015D38E16003A249D /* QuartzCore.framework */; };
-		C0B90E0415D3B400003A249D /* imamoe.png in Resources */ = {isa = PBXBuildFile; fileRef = C0B90E0215D3B400003A249D /* imamoe.png */; };
-		C0B90E0515D3B400003A249D /* imamoe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0B90E0315D3B400003A249D /* imamoe@2x.png */; };
 		C0B90E0D15D3BE76003A249D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C0B90E0C15D3BE75003A249D /* icon.png */; };
 		C0B90E0F15D3BE7C003A249D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0B90E0E15D3BE7C003A249D /* icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C035496815D404D600AB9987 /* imamoe2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imamoe2.png; sourceTree = "<group>"; };
+		C035496915D404D600AB9987 /* imamoe2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imamoe2@2x.png"; sourceTree = "<group>"; };
 		C0B90DD315D38BEF003A249D /* imamoeclock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imamoeclock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B90DD715D38BEF003A249D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C0B90DD915D38BEF003A249D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -48,8 +50,6 @@
 		C0B90DFA15D38C7D003A249D /* JDGroupedFlipNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JDGroupedFlipNumberView.h; path = JDFlipNumberView/JDGroupedFlipNumberView.h; sourceTree = "<group>"; };
 		C0B90DFB15D38C7D003A249D /* JDGroupedFlipNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JDGroupedFlipNumberView.m; path = JDFlipNumberView/JDGroupedFlipNumberView.m; sourceTree = "<group>"; };
 		C0B90E0015D38E16003A249D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		C0B90E0215D3B400003A249D /* imamoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imamoe.png; sourceTree = "<group>"; };
-		C0B90E0315D3B400003A249D /* imamoe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imamoe@2x.png"; sourceTree = "<group>"; };
 		C0B90E0C15D3BE75003A249D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		C0B90E0E15D3BE7C003A249D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,8 +103,8 @@
 		C0B90DDD15D38BEF003A249D /* imamoeclock */ = {
 			isa = PBXGroup;
 			children = (
-				C0B90E0215D3B400003A249D /* imamoe.png */,
-				C0B90E0315D3B400003A249D /* imamoe@2x.png */,
+				C035496815D404D600AB9987 /* imamoe2.png */,
+				C035496915D404D600AB9987 /* imamoe2@2x.png */,
 				C0B90DE615D38BEF003A249D /* ImamoeAppDelegate.h */,
 				C0B90DE715D38BF0003A249D /* ImamoeAppDelegate.m */,
 				C0B90DE915D38BF0003A249D /* ImamoeViewController.h */,
@@ -195,10 +195,10 @@
 				C0B90DE215D38BEF003A249D /* InfoPlist.strings in Resources */,
 				C0B90DEE15D38BF0003A249D /* ImamoeViewController.xib in Resources */,
 				C0B90DFD15D38C7D003A249D /* JDFlipNumberView.bundle in Resources */,
-				C0B90E0415D3B400003A249D /* imamoe.png in Resources */,
-				C0B90E0515D3B400003A249D /* imamoe@2x.png in Resources */,
 				C0B90E0D15D3BE76003A249D /* icon.png in Resources */,
 				C0B90E0F15D3BE7C003A249D /* icon@2x.png in Resources */,
+				C035496A15D404D600AB9987 /* imamoe2.png in Resources */,
+				C035496B15D404D600AB9987 /* imamoe2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +328,7 @@
 				C0B90DF315D38BF0003A249D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
