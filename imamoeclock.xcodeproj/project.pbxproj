@@ -1,0 +1,285 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C0B90DD815D38BEF003A249D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B90DD715D38BEF003A249D /* UIKit.framework */; };
+		C0B90DDA15D38BEF003A249D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B90DD915D38BEF003A249D /* Foundation.framework */; };
+		C0B90DDC15D38BEF003A249D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B90DDB15D38BEF003A249D /* CoreGraphics.framework */; };
+		C0B90DE215D38BEF003A249D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0B90DE015D38BEF003A249D /* InfoPlist.strings */; };
+		C0B90DE415D38BEF003A249D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B90DE315D38BEF003A249D /* main.m */; };
+		C0B90DE815D38BF0003A249D /* TESTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B90DE715D38BF0003A249D /* TESTAppDelegate.m */; };
+		C0B90DEB15D38BF0003A249D /* TESTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B90DEA15D38BF0003A249D /* TESTViewController.m */; };
+		C0B90DEE15D38BF0003A249D /* TESTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0B90DEC15D38BF0003A249D /* TESTViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C0B90DD315D38BEF003A249D /* imamoeclock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imamoeclock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0B90DD715D38BEF003A249D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C0B90DD915D38BEF003A249D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C0B90DDB15D38BEF003A249D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C0B90DDF15D38BEF003A249D /* imamoeclock-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "imamoeclock-Info.plist"; sourceTree = "<group>"; };
+		C0B90DE115D38BEF003A249D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C0B90DE315D38BEF003A249D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C0B90DE515D38BEF003A249D /* imamoeclock-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "imamoeclock-Prefix.pch"; sourceTree = "<group>"; };
+		C0B90DE615D38BEF003A249D /* TESTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TESTAppDelegate.h; sourceTree = "<group>"; };
+		C0B90DE715D38BF0003A249D /* TESTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TESTAppDelegate.m; sourceTree = "<group>"; };
+		C0B90DE915D38BF0003A249D /* TESTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TESTViewController.h; sourceTree = "<group>"; };
+		C0B90DEA15D38BF0003A249D /* TESTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TESTViewController.m; sourceTree = "<group>"; };
+		C0B90DED15D38BF0003A249D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TESTViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C0B90DD015D38BEF003A249D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0B90DD815D38BEF003A249D /* UIKit.framework in Frameworks */,
+				C0B90DDA15D38BEF003A249D /* Foundation.framework in Frameworks */,
+				C0B90DDC15D38BEF003A249D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C0B90DC815D38BEF003A249D = {
+			isa = PBXGroup;
+			children = (
+				C0B90DDD15D38BEF003A249D /* imamoeclock */,
+				C0B90DD615D38BEF003A249D /* Frameworks */,
+				C0B90DD415D38BEF003A249D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C0B90DD415D38BEF003A249D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0B90DD315D38BEF003A249D /* imamoeclock.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0B90DD615D38BEF003A249D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0B90DD715D38BEF003A249D /* UIKit.framework */,
+				C0B90DD915D38BEF003A249D /* Foundation.framework */,
+				C0B90DDB15D38BEF003A249D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0B90DDD15D38BEF003A249D /* imamoeclock */ = {
+			isa = PBXGroup;
+			children = (
+				C0B90DE615D38BEF003A249D /* TESTAppDelegate.h */,
+				C0B90DE715D38BF0003A249D /* TESTAppDelegate.m */,
+				C0B90DE915D38BF0003A249D /* TESTViewController.h */,
+				C0B90DEA15D38BF0003A249D /* TESTViewController.m */,
+				C0B90DEC15D38BF0003A249D /* TESTViewController.xib */,
+				C0B90DDE15D38BEF003A249D /* Supporting Files */,
+			);
+			path = imamoeclock;
+			sourceTree = "<group>";
+		};
+		C0B90DDE15D38BEF003A249D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C0B90DDF15D38BEF003A249D /* imamoeclock-Info.plist */,
+				C0B90DE015D38BEF003A249D /* InfoPlist.strings */,
+				C0B90DE315D38BEF003A249D /* main.m */,
+				C0B90DE515D38BEF003A249D /* imamoeclock-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C0B90DD215D38BEF003A249D /* imamoeclock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0B90DF115D38BF0003A249D /* Build configuration list for PBXNativeTarget "imamoeclock" */;
+			buildPhases = (
+				C0B90DCF15D38BEF003A249D /* Sources */,
+				C0B90DD015D38BEF003A249D /* Frameworks */,
+				C0B90DD115D38BEF003A249D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = imamoeclock;
+			productName = imamoeclock;
+			productReference = C0B90DD315D38BEF003A249D /* imamoeclock.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0B90DCA15D38BEF003A249D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TEST;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "mochida rei";
+			};
+			buildConfigurationList = C0B90DCD15D38BEF003A249D /* Build configuration list for PBXProject "imamoeclock" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C0B90DC815D38BEF003A249D;
+			productRefGroup = C0B90DD415D38BEF003A249D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C0B90DD215D38BEF003A249D /* imamoeclock */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C0B90DD115D38BEF003A249D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0B90DE215D38BEF003A249D /* InfoPlist.strings in Resources */,
+				C0B90DEE15D38BF0003A249D /* TESTViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0B90DCF15D38BEF003A249D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0B90DE415D38BEF003A249D /* main.m in Sources */,
+				C0B90DE815D38BF0003A249D /* TESTAppDelegate.m in Sources */,
+				C0B90DEB15D38BF0003A249D /* TESTViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C0B90DE015D38BEF003A249D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0B90DE115D38BEF003A249D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C0B90DEC15D38BF0003A249D /* TESTViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0B90DED15D38BF0003A249D /* en */,
+			);
+			name = TESTViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C0B90DEF15D38BF0003A249D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C0B90DF015D38BF0003A249D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C0B90DF215D38BF0003A249D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "imamoeclock/imamoeclock-Prefix.pch";
+				INFOPLIST_FILE = "imamoeclock/imamoeclock-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C0B90DF315D38BF0003A249D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "imamoeclock/imamoeclock-Prefix.pch";
+				INFOPLIST_FILE = "imamoeclock/imamoeclock-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0B90DCD15D38BEF003A249D /* Build configuration list for PBXProject "imamoeclock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0B90DEF15D38BF0003A249D /* Debug */,
+				C0B90DF015D38BF0003A249D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0B90DF115D38BF0003A249D /* Build configuration list for PBXNativeTarget "imamoeclock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0B90DF215D38BF0003A249D /* Debug */,
+				C0B90DF315D38BF0003A249D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C0B90DCA15D38BEF003A249D /* Project object */;
+}
