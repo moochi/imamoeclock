@@ -12,9 +12,16 @@
 		C0B90DDC15D38BEF003A249D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B90DDB15D38BEF003A249D /* CoreGraphics.framework */; };
 		C0B90DE215D38BEF003A249D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0B90DE015D38BEF003A249D /* InfoPlist.strings */; };
 		C0B90DE415D38BEF003A249D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B90DE315D38BEF003A249D /* main.m */; };
-		C0B90DE815D38BF0003A249D /* TESTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B90DE715D38BF0003A249D /* TESTAppDelegate.m */; };
-		C0B90DEB15D38BF0003A249D /* TESTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B90DEA15D38BF0003A249D /* TESTViewController.m */; };
-		C0B90DEE15D38BF0003A249D /* TESTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0B90DEC15D38BF0003A249D /* TESTViewController.xib */; };
+		C0B90DE815D38BF0003A249D /* ImamoeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B90DE715D38BF0003A249D /* ImamoeAppDelegate.m */; };
+		C0B90DEB15D38BF0003A249D /* ImamoeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B90DEA15D38BF0003A249D /* ImamoeViewController.m */; };
+		C0B90DEE15D38BF0003A249D /* ImamoeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0B90DEC15D38BF0003A249D /* ImamoeViewController.xib */; };
+		C0B90DFC15D38C7D003A249D /* JDDateCountdownFlipView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B90DF615D38C7D003A249D /* JDDateCountdownFlipView.m */; };
+		C0B90DFD15D38C7D003A249D /* JDFlipNumberView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C0B90DF715D38C7D003A249D /* JDFlipNumberView.bundle */; };
+		C0B90DFE15D38C7D003A249D /* JDFlipNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B90DF915D38C7D003A249D /* JDFlipNumberView.m */; };
+		C0B90DFF15D38C7D003A249D /* JDGroupedFlipNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B90DFB15D38C7D003A249D /* JDGroupedFlipNumberView.m */; };
+		C0B90E0115D38E16003A249D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B90E0015D38E16003A249D /* QuartzCore.framework */; };
+		C0B90E0415D3B400003A249D /* imamoe.png in Resources */ = {isa = PBXBuildFile; fileRef = C0B90E0215D3B400003A249D /* imamoe.png */; };
+		C0B90E0515D3B400003A249D /* imamoe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0B90E0315D3B400003A249D /* imamoe@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,11 +33,21 @@
 		C0B90DE115D38BEF003A249D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C0B90DE315D38BEF003A249D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C0B90DE515D38BEF003A249D /* imamoeclock-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "imamoeclock-Prefix.pch"; sourceTree = "<group>"; };
-		C0B90DE615D38BEF003A249D /* TESTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TESTAppDelegate.h; sourceTree = "<group>"; };
-		C0B90DE715D38BF0003A249D /* TESTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TESTAppDelegate.m; sourceTree = "<group>"; };
-		C0B90DE915D38BF0003A249D /* TESTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TESTViewController.h; sourceTree = "<group>"; };
-		C0B90DEA15D38BF0003A249D /* TESTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TESTViewController.m; sourceTree = "<group>"; };
-		C0B90DED15D38BF0003A249D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TESTViewController.xib; sourceTree = "<group>"; };
+		C0B90DE615D38BEF003A249D /* ImamoeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImamoeAppDelegate.h; sourceTree = "<group>"; };
+		C0B90DE715D38BF0003A249D /* ImamoeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImamoeAppDelegate.m; sourceTree = "<group>"; };
+		C0B90DE915D38BF0003A249D /* ImamoeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImamoeViewController.h; sourceTree = "<group>"; };
+		C0B90DEA15D38BF0003A249D /* ImamoeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImamoeViewController.m; sourceTree = "<group>"; };
+		C0B90DED15D38BF0003A249D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ImamoeViewController.xib; sourceTree = "<group>"; };
+		C0B90DF515D38C7D003A249D /* JDDateCountdownFlipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JDDateCountdownFlipView.h; path = JDFlipNumberView/JDDateCountdownFlipView.h; sourceTree = "<group>"; };
+		C0B90DF615D38C7D003A249D /* JDDateCountdownFlipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JDDateCountdownFlipView.m; path = JDFlipNumberView/JDDateCountdownFlipView.m; sourceTree = "<group>"; };
+		C0B90DF715D38C7D003A249D /* JDFlipNumberView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = JDFlipNumberView.bundle; path = JDFlipNumberView/JDFlipNumberView.bundle; sourceTree = "<group>"; };
+		C0B90DF815D38C7D003A249D /* JDFlipNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JDFlipNumberView.h; path = JDFlipNumberView/JDFlipNumberView.h; sourceTree = "<group>"; };
+		C0B90DF915D38C7D003A249D /* JDFlipNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JDFlipNumberView.m; path = JDFlipNumberView/JDFlipNumberView.m; sourceTree = "<group>"; };
+		C0B90DFA15D38C7D003A249D /* JDGroupedFlipNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JDGroupedFlipNumberView.h; path = JDFlipNumberView/JDGroupedFlipNumberView.h; sourceTree = "<group>"; };
+		C0B90DFB15D38C7D003A249D /* JDGroupedFlipNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JDGroupedFlipNumberView.m; path = JDFlipNumberView/JDGroupedFlipNumberView.m; sourceTree = "<group>"; };
+		C0B90E0015D38E16003A249D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C0B90E0215D3B400003A249D /* imamoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imamoe.png; sourceTree = "<group>"; };
+		C0B90E0315D3B400003A249D /* imamoe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imamoe@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0B90E0115D38E16003A249D /* QuartzCore.framework in Frameworks */,
 				C0B90DD815D38BEF003A249D /* UIKit.framework in Frameworks */,
 				C0B90DDA15D38BEF003A249D /* Foundation.framework in Frameworks */,
 				C0B90DDC15D38BEF003A249D /* CoreGraphics.framework in Frameworks */,
@@ -50,6 +68,7 @@
 		C0B90DC815D38BEF003A249D = {
 			isa = PBXGroup;
 			children = (
+				C0B90DF415D38C5E003A249D /* JDFlipNumberView */,
 				C0B90DDD15D38BEF003A249D /* imamoeclock */,
 				C0B90DD615D38BEF003A249D /* Frameworks */,
 				C0B90DD415D38BEF003A249D /* Products */,
@@ -67,6 +86,7 @@
 		C0B90DD615D38BEF003A249D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0B90E0015D38E16003A249D /* QuartzCore.framework */,
 				C0B90DD715D38BEF003A249D /* UIKit.framework */,
 				C0B90DD915D38BEF003A249D /* Foundation.framework */,
 				C0B90DDB15D38BEF003A249D /* CoreGraphics.framework */,
@@ -77,11 +97,13 @@
 		C0B90DDD15D38BEF003A249D /* imamoeclock */ = {
 			isa = PBXGroup;
 			children = (
-				C0B90DE615D38BEF003A249D /* TESTAppDelegate.h */,
-				C0B90DE715D38BF0003A249D /* TESTAppDelegate.m */,
-				C0B90DE915D38BF0003A249D /* TESTViewController.h */,
-				C0B90DEA15D38BF0003A249D /* TESTViewController.m */,
-				C0B90DEC15D38BF0003A249D /* TESTViewController.xib */,
+				C0B90E0215D3B400003A249D /* imamoe.png */,
+				C0B90E0315D3B400003A249D /* imamoe@2x.png */,
+				C0B90DE615D38BEF003A249D /* ImamoeAppDelegate.h */,
+				C0B90DE715D38BF0003A249D /* ImamoeAppDelegate.m */,
+				C0B90DE915D38BF0003A249D /* ImamoeViewController.h */,
+				C0B90DEA15D38BF0003A249D /* ImamoeViewController.m */,
+				C0B90DEC15D38BF0003A249D /* ImamoeViewController.xib */,
 				C0B90DDE15D38BEF003A249D /* Supporting Files */,
 			);
 			path = imamoeclock;
@@ -96,6 +118,20 @@
 				C0B90DE515D38BEF003A249D /* imamoeclock-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C0B90DF415D38C5E003A249D /* JDFlipNumberView */ = {
+			isa = PBXGroup;
+			children = (
+				C0B90DF515D38C7D003A249D /* JDDateCountdownFlipView.h */,
+				C0B90DF615D38C7D003A249D /* JDDateCountdownFlipView.m */,
+				C0B90DF715D38C7D003A249D /* JDFlipNumberView.bundle */,
+				C0B90DF815D38C7D003A249D /* JDFlipNumberView.h */,
+				C0B90DF915D38C7D003A249D /* JDFlipNumberView.m */,
+				C0B90DFA15D38C7D003A249D /* JDGroupedFlipNumberView.h */,
+				C0B90DFB15D38C7D003A249D /* JDGroupedFlipNumberView.m */,
+			);
+			name = JDFlipNumberView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +187,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0B90DE215D38BEF003A249D /* InfoPlist.strings in Resources */,
-				C0B90DEE15D38BF0003A249D /* TESTViewController.xib in Resources */,
+				C0B90DEE15D38BF0003A249D /* ImamoeViewController.xib in Resources */,
+				C0B90DFD15D38C7D003A249D /* JDFlipNumberView.bundle in Resources */,
+				C0B90E0415D3B400003A249D /* imamoe.png in Resources */,
+				C0B90E0515D3B400003A249D /* imamoe@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,8 +202,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0B90DE415D38BEF003A249D /* main.m in Sources */,
-				C0B90DE815D38BF0003A249D /* TESTAppDelegate.m in Sources */,
-				C0B90DEB15D38BF0003A249D /* TESTViewController.m in Sources */,
+				C0B90DE815D38BF0003A249D /* ImamoeAppDelegate.m in Sources */,
+				C0B90DEB15D38BF0003A249D /* ImamoeViewController.m in Sources */,
+				C0B90DFC15D38C7D003A249D /* JDDateCountdownFlipView.m in Sources */,
+				C0B90DFE15D38C7D003A249D /* JDFlipNumberView.m in Sources */,
+				C0B90DFF15D38C7D003A249D /* JDGroupedFlipNumberView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,12 +221,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		C0B90DEC15D38BF0003A249D /* TESTViewController.xib */ = {
+		C0B90DEC15D38BF0003A249D /* ImamoeViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C0B90DED15D38BF0003A249D /* en */,
 			);
-			name = TESTViewController.xib;
+			name = ImamoeViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

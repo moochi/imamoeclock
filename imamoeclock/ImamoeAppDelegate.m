@@ -1,16 +1,16 @@
 //
-//  TESTAppDelegate.m
+//  ImamoeAppDelegate.m
 //  imamoeclock
 //
 //  Created by mochida rei on 12/08/09.
 //  Copyright (c) 2012年 mochida rei. All rights reserved.
 //
 
-#import "TESTAppDelegate.h"
+#import "ImamoeAppDelegate.h"
 
-#import "TESTViewController.h"
+#import "ImamoeViewController.h"
 
-@implementation TESTAppDelegate
+@implementation ImamoeAppDelegate
 
 - (void)dealloc
 {
@@ -23,7 +23,7 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    self.viewController = [[[TESTViewController alloc] initWithNibName:@"TESTViewController" bundle:nil] autorelease];
+    self.viewController = [[[ImamoeViewController alloc] initWithNibName:@"ImamoeViewController" bundle:nil] autorelease];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

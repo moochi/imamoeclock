@@ -1,5 +1,5 @@
 //
-//  TESTViewController.h
+//  ImamoeViewController.h
 //  imamoeclock
 //
 //  Created by mochida rei on 12/08/09.
@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JDGroupedFlipNumberView.h"
 
-@interface TESTViewController : UIViewController
+@interface ImamoeViewController : UIViewController <JDGroupedFlipNumberViewDelegate>
 
 @end

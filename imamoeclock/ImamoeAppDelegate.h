@@ -1,5 +1,5 @@
 //
-//  TESTAppDelegate.h
+//  ImamoeAppDelegate.h
 //  imamoeclock
 //
 //  Created by mochida rei on 12/08/09.
@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class TESTViewController;
+@class ImamoeViewController;
 
-@interface TESTAppDelegate : UIResponder <UIApplicationDelegate>
+@interface ImamoeAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) TESTViewController *viewController;
+@property (strong, nonatomic) ImamoeViewController *viewController;
 
 @end

@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "TESTAppDelegate.h"
+#import "ImamoeAppDelegate.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([TESTAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([ImamoeAppDelegate class]));
     }
 }
