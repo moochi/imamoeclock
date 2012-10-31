@@ -16,6 +16,8 @@
 @property (retain, nonatomic) IBOutlet UIView *hourView;
 @property (retain, nonatomic) JDGroupedFlipNumberView *hourFlip;
 @property (retain, nonatomic) NSTimer *ctimer;
+@property (retain, nonatomic) IBOutlet UIView *pickerBaseView;
+@property (retain, nonatomic) IBOutlet UIDatePicker *datepicker;
 
 @end
 
@@ -23,6 +25,29 @@
 @synthesize hourView;
 @synthesize minuteView;
 @synthesize secondView;
+
+
+- (IBAction)pickerDoneAction:(id)sender {
+    [self.pickerBaseView setHidden:YES];
+    NSLog(@"%@",self.datepicker.date);
+    
+    UILocalNotification *notification = [[[UILocalNotification alloc] init] autorelease];
+    [notification setFireDate:self.datepicker.date];
+    [notification setTimeZone:[NSTimeZone systemTimeZone]];
+    [notification setAlertBody:@"notification"];
+    [notification setAlertAction:@"open"];
+    [notification setSoundName:UILocalNotificationDefaultSoundName];
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    
+    NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    NSLog(@"count:%d",[notifications count]);
+
+}
+
+- (IBAction)pickerUpAction:(id)sender {
+    [self.datepicker setDate:[NSDate date] animated:NO];
+    [self.pickerBaseView setHidden:NO];
+}
 
 - (void)viewDidLoad
 {
@@ -66,6 +91,16 @@
                                             selector:@selector(timerDidEnd)
                                             userInfo:nil
                                              repeats:YES];
+    
+    NSBundle *bundle = [NSBundle mainBundle];
+    [bundle loadNibNamed:@"dateTimeSetting" owner:self options:nil];
+    [self.pickerBaseView setHidden:YES];
+    [self.view addSubview:self.pickerBaseView];
+    [self.datepicker setTimeZone:[NSTimeZone systemTimeZone]];
+    [self.datepicker setLocale:[NSLocale currentLocale]];
+    
+    NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    NSLog(@"count:%d",[notifications count]);
 }
 
 - (void)timerDidEnd
@@ -94,6 +129,8 @@
     [self setSecondView:nil];
     [self setMinuteView:nil];
     [self setHourView:nil];
+    [self setPickerBaseView:nil];
+    [self setDatepicker:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -117,6 +154,8 @@
         }
     }
     
+    [_pickerBaseView release];
+    [_datepicker release];
     [super dealloc];
 }
 @end

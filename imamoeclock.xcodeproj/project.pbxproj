@@ -24,6 +24,7 @@
 		C0B90E0115D38E16003A249D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B90E0015D38E16003A249D /* QuartzCore.framework */; };
 		C0B90E0D15D3BE76003A249D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C0B90E0C15D3BE75003A249D /* icon.png */; };
 		C0B90E0F15D3BE7C003A249D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0B90E0E15D3BE7C003A249D /* icon@2x.png */; };
+		C0DAE276164114B100B1A7A9 /* dateTimeSetting.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0DAE275164114B100B1A7A9 /* dateTimeSetting.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		C0B90E0015D38E16003A249D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C0B90E0C15D3BE75003A249D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		C0B90E0E15D3BE7C003A249D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		C0DAE275164114B100B1A7A9 /* dateTimeSetting.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dateTimeSetting.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				C0B90DEA15D38BF0003A249D /* ImamoeViewController.m */,
 				C0B90DEC15D38BF0003A249D /* ImamoeViewController.xib */,
 				C0B90DDE15D38BEF003A249D /* Supporting Files */,
+				C0DAE275164114B100B1A7A9 /* dateTimeSetting.xib */,
 			);
 			path = imamoeclock;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				C0B90E0F15D3BE7C003A249D /* icon@2x.png in Resources */,
 				C035496A15D404D600AB9987 /* imamoe2.png in Resources */,
 				C035496B15D404D600AB9987 /* imamoe2@2x.png in Resources */,
+				C0DAE276164114B100B1A7A9 /* dateTimeSetting.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
