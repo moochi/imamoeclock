@@ -24,6 +24,15 @@
 		C0B90E0115D38E16003A249D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B90E0015D38E16003A249D /* QuartzCore.framework */; };
 		C0B90E0D15D3BE76003A249D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C0B90E0C15D3BE75003A249D /* icon.png */; };
 		C0B90E0F15D3BE7C003A249D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0B90E0E15D3BE7C003A249D /* icon@2x.png */; };
+		C0C3292D165B497000D37F2A /* se_maoudamashii_chime03.caf in Resources */ = {isa = PBXBuildFile; fileRef = C0C3292C165B497000D37F2A /* se_maoudamashii_chime03.caf */; };
+		C0C32933165B50FD00D37F2A /* AlarmSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C32931165B50FD00D37F2A /* AlarmSettingTableViewController.m */; };
+		C0C32934165B50FD00D37F2A /* AlarmSettingTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0C32932165B50FD00D37F2A /* AlarmSettingTableViewController.xib */; };
+		C0C32938165B51E000D37F2A /* clockdata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0C32936165B51E000D37F2A /* clockdata.xcdatamodeld */; };
+		C0C3293B165B58D500D37F2A /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3293A165B58D500D37F2A /* Timer.m */; };
+		C0C3293D165B590D00D37F2A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0C3293C165B590D00D37F2A /* CoreData.framework */; };
+		C0C32941165B6D6800D37F2A /* AlarmSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3293F165B6D6800D37F2A /* AlarmSettingViewController.m */; };
+		C0C32942165B6D6800D37F2A /* AlarmSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0C32940165B6D6800D37F2A /* AlarmSettingViewController.xib */; };
+		C0C32948165B72EC00D37F2A /* UIViewController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C32947165B72EC00D37F2A /* UIViewController+Extend.m */; };
 		C0DAE276164114B100B1A7A9 /* dateTimeSetting.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0DAE275164114B100B1A7A9 /* dateTimeSetting.xib */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +62,19 @@
 		C0B90E0015D38E16003A249D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C0B90E0C15D3BE75003A249D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		C0B90E0E15D3BE7C003A249D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		C0C3292C165B497000D37F2A /* se_maoudamashii_chime03.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = se_maoudamashii_chime03.caf; sourceTree = "<group>"; };
+		C0C32930165B50FD00D37F2A /* AlarmSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmSettingTableViewController.h; sourceTree = "<group>"; };
+		C0C32931165B50FD00D37F2A /* AlarmSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmSettingTableViewController.m; sourceTree = "<group>"; };
+		C0C32932165B50FD00D37F2A /* AlarmSettingTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmSettingTableViewController.xib; sourceTree = "<group>"; };
+		C0C32937165B51E000D37F2A /* clockdata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = clockdata.xcdatamodel; sourceTree = "<group>"; };
+		C0C32939165B58D500D37F2A /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		C0C3293A165B58D500D37F2A /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
+		C0C3293C165B590D00D37F2A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C0C3293E165B6D6800D37F2A /* AlarmSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmSettingViewController.h; sourceTree = "<group>"; };
+		C0C3293F165B6D6800D37F2A /* AlarmSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmSettingViewController.m; sourceTree = "<group>"; };
+		C0C32940165B6D6800D37F2A /* AlarmSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmSettingViewController.xib; sourceTree = "<group>"; };
+		C0C32946165B72EC00D37F2A /* UIViewController+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extend.h"; sourceTree = "<group>"; };
+		C0C32947165B72EC00D37F2A /* UIViewController+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extend.m"; sourceTree = "<group>"; };
 		C0DAE275164114B100B1A7A9 /* dateTimeSetting.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dateTimeSetting.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0C3293D165B590D00D37F2A /* CoreData.framework in Frameworks */,
 				C0B90E0115D38E16003A249D /* QuartzCore.framework in Frameworks */,
 				C0B90DD815D38BEF003A249D /* UIKit.framework in Frameworks */,
 				C0B90DDA15D38BEF003A249D /* Foundation.framework in Frameworks */,
@@ -94,6 +117,7 @@
 		C0B90DD615D38BEF003A249D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0C3293C165B590D00D37F2A /* CoreData.framework */,
 				C0B90E0015D38E16003A249D /* QuartzCore.framework */,
 				C0B90DD715D38BEF003A249D /* UIKit.framework */,
 				C0B90DD915D38BEF003A249D /* Foundation.framework */,
@@ -105,6 +129,9 @@
 		C0B90DDD15D38BEF003A249D /* imamoeclock */ = {
 			isa = PBXGroup;
 			children = (
+				C0C32935165B51B600D37F2A /* coredata */,
+				C0C3292F165B50AA00D37F2A /* setting */,
+				C0C3292C165B497000D37F2A /* se_maoudamashii_chime03.caf */,
 				C035496815D404D600AB9987 /* imamoe2.png */,
 				C035496915D404D600AB9987 /* imamoe2@2x.png */,
 				C0B90DE615D38BEF003A249D /* ImamoeAppDelegate.h */,
@@ -114,6 +141,8 @@
 				C0B90DEC15D38BF0003A249D /* ImamoeViewController.xib */,
 				C0B90DDE15D38BEF003A249D /* Supporting Files */,
 				C0DAE275164114B100B1A7A9 /* dateTimeSetting.xib */,
+				C0C32946165B72EC00D37F2A /* UIViewController+Extend.h */,
+				C0C32947165B72EC00D37F2A /* UIViewController+Extend.m */,
 			);
 			path = imamoeclock;
 			sourceTree = "<group>";
@@ -141,6 +170,29 @@
 				C0B90DFB15D38C7D003A249D /* JDGroupedFlipNumberView.m */,
 			);
 			name = JDFlipNumberView;
+			sourceTree = "<group>";
+		};
+		C0C3292F165B50AA00D37F2A /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				C0C32930165B50FD00D37F2A /* AlarmSettingTableViewController.h */,
+				C0C32931165B50FD00D37F2A /* AlarmSettingTableViewController.m */,
+				C0C32932165B50FD00D37F2A /* AlarmSettingTableViewController.xib */,
+				C0C3293E165B6D6800D37F2A /* AlarmSettingViewController.h */,
+				C0C3293F165B6D6800D37F2A /* AlarmSettingViewController.m */,
+				C0C32940165B6D6800D37F2A /* AlarmSettingViewController.xib */,
+			);
+			name = setting;
+			sourceTree = "<group>";
+		};
+		C0C32935165B51B600D37F2A /* coredata */ = {
+			isa = PBXGroup;
+			children = (
+				C0C32936165B51E000D37F2A /* clockdata.xcdatamodeld */,
+				C0C32939165B58D500D37F2A /* Timer.h */,
+				C0C3293A165B58D500D37F2A /* Timer.m */,
+			);
+			name = coredata;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +255,9 @@
 				C035496A15D404D600AB9987 /* imamoe2.png in Resources */,
 				C035496B15D404D600AB9987 /* imamoe2@2x.png in Resources */,
 				C0DAE276164114B100B1A7A9 /* dateTimeSetting.xib in Resources */,
+				C0C3292D165B497000D37F2A /* se_maoudamashii_chime03.caf in Resources */,
+				C0C32934165B50FD00D37F2A /* AlarmSettingTableViewController.xib in Resources */,
+				C0C32942165B6D6800D37F2A /* AlarmSettingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +274,11 @@
 				C0B90DFC15D38C7D003A249D /* JDDateCountdownFlipView.m in Sources */,
 				C0B90DFE15D38C7D003A249D /* JDFlipNumberView.m in Sources */,
 				C0B90DFF15D38C7D003A249D /* JDGroupedFlipNumberView.m in Sources */,
+				C0C32933165B50FD00D37F2A /* AlarmSettingTableViewController.m in Sources */,
+				C0C32938165B51E000D37F2A /* clockdata.xcdatamodeld in Sources */,
+				C0C3293B165B58D500D37F2A /* Timer.m in Sources */,
+				C0C32941165B6D6800D37F2A /* AlarmSettingViewController.m in Sources */,
+				C0C32948165B72EC00D37F2A /* UIViewController+Extend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +395,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C0C32936165B51E000D37F2A /* clockdata.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C0C32937165B51E000D37F2A /* clockdata.xcdatamodel */,
+			);
+			currentVersion = C0C32937165B51E000D37F2A /* clockdata.xcdatamodel */;
+			path = clockdata.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C0B90DCA15D38BEF003A249D /* Project object */;
 }

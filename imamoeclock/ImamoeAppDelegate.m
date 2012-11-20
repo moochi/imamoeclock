@@ -10,13 +10,21 @@
 
 #import "ImamoeViewController.h"
 
+
 @implementation ImamoeAppDelegate
+
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize managedObjectModel = _managedObjectModel;
+
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     UIAlertView *alert =
     [[[UIAlertView alloc] initWithTitle:@"notification" message:notification.alertBody
                                delegate:self cancelButtonTitle:@"はい" otherButtonTitles:nil, nil] autorelease];
     [alert show];
+    
+    [[UIApplication sharedApplication] cancelLocalNotification:notification];
 
 }
 
@@ -63,5 +71,65 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+//保存先ディレクトリ
+- (NSString *)applicationDocumentsDirectory {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+}
+
+//_persistentStoreCoordinatorがnilなら作って返す。
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    if (_persistentStoreCoordinator == nil) {
+        _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc]
+                                       initWithManagedObjectModel:[self managedObjectModel]];
+        
+        
+        NSURL *url =  [NSURL fileURLWithPath:[[self applicationDocumentsDirectory]
+                                              stringByAppendingPathComponent: @"ClockCoreData.sqlite"]];
+        
+        NSError *error = nil;
+        if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                       configuration:nil
+                                                                 URL:url
+                                                             options:nil error:&error])
+        {
+            //エラー処理
+            NSLog(@"persistentStoreCoordinator: Error %@, %@", error, [error userInfo]);
+        }
+    }
+    return _persistentStoreCoordinator;
+}
+
+//_managedObjectModelがnilなら作って返す。
+-(NSManagedObjectModel *)managedObjectModel
+{
+    if (_managedObjectModel == nil) {
+        _managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+    }
+    return _managedObjectModel;
+}
+
+//_managedObjectContextがnilなら作って返す。
+- (NSManagedObjectContext *)managedObjectContext {
+    if (_managedObjectContext == nil) {
+        NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+        if (coordinator != nil) {
+            _managedObjectContext = [[NSManagedObjectContext alloc] init];
+            [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+        }
+    }
+    return _managedObjectContext;
+}
+
+//_managedObjectContextのデータを保存する。
+- (void)saveContext {
+    NSError *error = nil;
+    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+        //エラー処理
+        NSLog(@"saveContext: %@", error.debugDescription);
+    }
+}
+
 
 @end

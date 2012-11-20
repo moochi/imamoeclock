@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @class ImamoeViewController;
 
@@ -15,5 +16,10 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) ImamoeViewController *viewController;
+
+// CoreData
+@property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong, readonly) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, strong, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @end

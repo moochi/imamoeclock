@@ -7,6 +7,7 @@
 //
 
 #import "ImamoeViewController.h"
+#import "AlarmSettingTableViewController.h"
 
 @interface ImamoeViewController ()
 @property (retain, nonatomic) IBOutlet UIView *secondView;
@@ -36,7 +37,8 @@
     [notification setTimeZone:[NSTimeZone systemTimeZone]];
     [notification setAlertBody:@"notification"];
     [notification setAlertAction:@"open"];
-    [notification setSoundName:UILocalNotificationDefaultSoundName];
+    //[notification setSoundName:UILocalNotificationDefaultSoundName];
+    [notification setSoundName:@"se_maoudamashii_chime03.caf"];
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];
     
     NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
@@ -45,8 +47,13 @@
 }
 
 - (IBAction)pickerUpAction:(id)sender {
+    /*
     [self.datepicker setDate:[NSDate date] animated:NO];
     [self.pickerBaseView setHidden:NO];
+     */
+    AlarmSettingTableViewController *view = [[[AlarmSettingTableViewController alloc] initWithNibName:@"AlarmSettingTableViewController" bundle:nil] autorelease];
+    UINavigationController *navi = [[[UINavigationController alloc] initWithRootViewController:view] autorelease];
+    [self presentModalViewController:navi animated:YES];
 }
 
 - (void)viewDidLoad
