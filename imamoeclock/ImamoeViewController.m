@@ -60,6 +60,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    //[[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
     NSDate *date = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *dateComps = [calendar components:NSYearCalendarUnit |

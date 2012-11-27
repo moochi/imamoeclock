@@ -19,6 +19,7 @@
 
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    
     UIAlertView *alert =
     [[[UIAlertView alloc] initWithTitle:@"notification" message:notification.alertBody
                                delegate:self cancelButtonTitle:@"はい" otherButtonTitles:nil, nil] autorelease];

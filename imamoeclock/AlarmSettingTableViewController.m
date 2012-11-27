@@ -20,15 +20,69 @@
 
 @implementation AlarmSettingTableViewController
 
+- (void)switchAction:(id)sender {
+    NSLog(@"tag:%d",[(UISwitch *)sender tag]);
+    NSLog(@"flag:%d",((UISwitch *)sender).on);
+    Timer *timer = [self.itemArray objectAtIndex:[(UISwitch *)sender tag]];
+    timer.activeFlag = [NSNumber numberWithBool:((UISwitch *)sender).on];
+    
+    NSManagedObjectContext *managedObjectContext = [self getManagedObjectContext];
+    NSError *error = nil;
+    if (![managedObjectContext save:&error]) {
+    }
+    else {
+        
+    }
+
+
+    
+    if ([timer.activeFlag boolValue]) {
+        // ON
+        NSDictionary *dic = [NSMutableDictionary dictionary];
+        [dic setValue:[[[timer objectID] URIRepresentation] absoluteString] forKey:OBJECT_KEY];
+        UILocalNotification *notification = [[[UILocalNotification alloc] init] autorelease];
+        [notification setFireDate:timer.dateTime];
+        [notification setTimeZone:[NSTimeZone systemTimeZone]];
+        [notification setAlertBody:@"notification"];
+        [notification setAlertAction:@"open"];
+        [notification setSoundName:@"se_maoudamashii_chime03.caf"];
+        [notification setUserInfo:dic];
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    }
+    else {
+        // OFF
+        NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+        for (UILocalNotification *item in notifications) {
+            NSDictionary *dic = [item userInfo];
+            NSString *objectId = [dic objectForKey:OBJECT_KEY];
+            if ([objectId isEqualToString:[[[timer objectID] URIRepresentation] absoluteString]]) {
+                [[UIApplication sharedApplication] cancelLocalNotification:item];
+            }
+        }
+    }
+
+}
+
 - (void)doneAction {
     [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)addAction {
+    NSDate *nowDate = [NSDate date];
+    NSDateComponents* components = [[NSCalendar currentCalendar]
+                                    components: NSYearCalendarUnit |
+                                    NSMonthCalendarUnit |
+                                    NSDayCalendarUnit |
+                                    NSHourCalendarUnit |
+                                    NSMinuteCalendarUnit |
+                                    NSSecondCalendarUnit
+                                    fromDate:nowDate];
+    
+    
     NSManagedObjectContext *managedObjectContext = [self getManagedObjectContext];
     
     Timer *timer = (Timer *)[NSEntityDescription insertNewObjectForEntityForName:@"Timer" inManagedObjectContext:managedObjectContext];
-    timer.dateTime  = [NSDate date];
+    timer.dateTime  = [nowDate dateByAddingTimeInterval:-([components second])];
     timer.activeFlag    = NO;
     
     NSError *error = nil;
@@ -46,22 +100,20 @@
 - (void)timerLoad {
     NSManagedObjectContext *managedObjectContext = [self getManagedObjectContext];
     
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
 	NSEntityDescription *tmpPhoto = [NSEntityDescription entityForName:@"Timer" inManagedObjectContext:managedObjectContext];
 	[request setEntity:tmpPhoto];
     NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"dateTime" ascending:NO] autorelease];
 	NSArray *sortDescriptors = [[[NSArray alloc] initWithObjects:sortDescriptor, nil] autorelease];
 	[request setSortDescriptors:sortDescriptors];
     
-	
+	[self.itemArray removeAllObjects];
+    
 	// Execute the fetch -- create a mutable copy of the result.
 	NSError *error = nil;
-	self.itemArray = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-	if (self.itemArray == nil) {
-		// Handle the error.
-	}
+	//self.itemArray = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    [self.itemArray addObjectsFromArray:[[managedObjectContext executeFetchRequest:request error:&error] mutableCopy]];
     NSLog(@"count:%d",[self.itemArray count]);
-    
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -77,14 +129,16 @@
 {
     [super viewDidLoad];
 
+    self.itemArray = [NSMutableArray array];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAction)];
+    UIBarButtonItem *rightButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAction)] autorelease];
     [self.navigationItem setRightBarButtonItem:rightButton];
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAction)];
+    UIBarButtonItem *leftButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAction)] autorelease];
     [self.navigationItem setLeftBarButtonItem:leftButton];
 }
 
@@ -93,6 +147,19 @@
     [self timerLoad];
     
     [self.tableView reloadData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    NSManagedObjectContext *managedObjectContext = [self getManagedObjectContext];
+    
+    NSError *error = nil;
+    if ([managedObjectContext hasChanges] &&![managedObjectContext save:&error]) {
+    }
+    else {
+        
+    }
+
+    [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -123,11 +190,30 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
         
         [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        
+        UILabel *label = [[[UILabel alloc] init] autorelease];
+        [label setTag:100];
+        [label setFont:[UIFont boldSystemFontOfSize:20]];
+        [label setCenter:CGPointMake(0, 11)];
+        [cell.contentView addSubview:label];
+        
+        UISwitch *sw = [[[UISwitch alloc] init] autorelease];
+        [sw setCenter:CGPointMake(240, 22)];
+        [sw addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
+        [cell.contentView addSubview:sw];
     }
     NSDateFormatter *format = [[[NSDateFormatter alloc] init] autorelease];
     [format setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     Timer *timer = [self.itemArray objectAtIndex:indexPath.row];
-    [cell.textLabel setText:[format stringFromDate:timer.dateTime]];
+    UILabel *label = (UILabel *)[cell.contentView viewWithTag:100];
+    [label setText:[format stringFromDate:timer.dateTime]];
+    [label sizeToFit];
+    
+    UISwitch *sw = (UISwitch *)[[cell.contentView subviews] lastObject];
+    if (sw) {
+        [sw setTag:indexPath.row];
+        [sw setOn:[timer.activeFlag boolValue]];
+    }
     
     // Configure the cell...
     

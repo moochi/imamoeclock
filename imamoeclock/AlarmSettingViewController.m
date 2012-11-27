@@ -8,6 +8,7 @@
 
 #import "AlarmSettingViewController.h"
 #import "UIViewController+Extend.h"
+#import "AlarmSettingTableViewController.h"
 
 @interface AlarmSettingViewController ()
 @property (retain, nonatomic) IBOutlet UIDatePicker *datePicker;
@@ -17,7 +18,20 @@
 @implementation AlarmSettingViewController
 
 - (void)doneAction {
-    self.timer.dateTime = self.datePicker.date;
+    [self.navigationItem.rightBarButtonItem setEnabled:NO];
+    
+    NSDateComponents* components = [[NSCalendar currentCalendar]
+                                    components: NSYearCalendarUnit |
+                                    NSMonthCalendarUnit |
+                                    NSDayCalendarUnit |
+                                    NSHourCalendarUnit |
+                                    NSMinuteCalendarUnit |
+                                    NSSecondCalendarUnit
+                                    fromDate:self.datePicker.date];
+    
+        
+    self.timer.dateTime = [self.datePicker.date dateByAddingTimeInterval:-([components second])];
+    self.timer.activeFlag = [NSNumber numberWithBool:YES];
     
     NSManagedObjectContext *managedObjectContext = [self getManagedObjectContext];
     
@@ -27,8 +41,21 @@
     else {
         
     }
-   
+    
+    UILocalNotification *notification = [[[UILocalNotification alloc] init] autorelease];
+    NSDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setValue:[[[self.timer objectID] URIRepresentation] absoluteString] forKey:OBJECT_KEY];
+
+    [notification setFireDate:self.timer.dateTime];
+    [notification setTimeZone:[NSTimeZone systemTimeZone]];
+    [notification setAlertBody:@"notification"];
+    [notification setAlertAction:@"open"];
+    [notification setSoundName:@"se_maoudamashii_chime03.caf"];
+    [notification setUserInfo:dic];
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    
     [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
