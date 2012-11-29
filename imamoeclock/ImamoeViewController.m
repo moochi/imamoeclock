@@ -19,6 +19,7 @@
 @property (retain, nonatomic) NSTimer *ctimer;
 @property (retain, nonatomic) IBOutlet UIView *pickerBaseView;
 @property (retain, nonatomic) IBOutlet UIDatePicker *datepicker;
+@property (assign, nonatomic) BOOL observFlag;
 
 @end
 
@@ -56,12 +57,43 @@
     [self presentModalViewController:navi animated:YES];
 }
 
+- (void)setClock {
+    NSDate *date = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *dateComps = [calendar components:NSYearCalendarUnit |
+                                   NSMonthCalendarUnit  |
+                                   NSDayCalendarUnit    |
+                                   NSHourCalendarUnit   |
+                                   NSMinuteCalendarUnit |
+                                   NSSecondCalendarUnit
+                                              fromDate:date];
+    
+    
+    if (self.secondFlip) {
+        [self.secondFlip animateToValue:dateComps.second withDuration:1.f];
+    }
+
+    if (self.minuteFlip) {
+        [self.minuteFlip animateToValue:dateComps.minute withDuration:1.f];
+    }
+    
+    if (self.hourFlip) {
+        [self.hourFlip animateToValue:dateComps.hour withDuration:1.f];
+    }
+}
+
+- (void)applicationDidBecomeActive {
+    [self setClock];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     //[[UIApplication sharedApplication] cancelAllLocalNotifications];
+    self.observFlag = NO;
     
+
     NSDate *date = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *dateComps = [calendar components:NSYearCalendarUnit |
@@ -72,28 +104,28 @@
                                    NSSecondCalendarUnit
                                               fromDate:date];
 
-    
     self.secondFlip = [[[JDGroupedFlipNumberView alloc] initWithFlipNumberViewCount: 2] autorelease];
     self.secondFlip.delegate = self;
-    [self.secondFlip setIntValue:dateComps.second];
-    //[self.secondFlip animateUpWithTimeInterval:1.f];
-    [self.secondFlip setMaximumValue:59];
     [self.secondFlip setFrame:CGRectMake(0, 0, self.secondView.frame.size.width, self.secondView.frame.size.height)];
+    [self.secondFlip setIntValue:dateComps.second];
+    [self.secondFlip setMaximumValue:59];
     [self.secondView addSubview: self.secondFlip];
     
     self.minuteFlip = [[[JDGroupedFlipNumberView alloc] initWithFlipNumberViewCount: 2] autorelease];
     self.minuteFlip.delegate = self;
+    [self.minuteFlip setFrame:CGRectMake(0, 0, self.minuteView.frame.size.width, self.minuteView.frame.size.height)];
     [self.minuteFlip setIntValue:dateComps.minute];
     [self.minuteFlip setMaximumValue:59];
-    [self.minuteFlip setFrame:CGRectMake(0, 0, self.minuteView.frame.size.width, self.minuteView.frame.size.height)];
     [self.minuteView addSubview:self.minuteFlip];
 
     self.hourFlip = [[[JDGroupedFlipNumberView alloc] initWithFlipNumberViewCount: 2] autorelease];
     self.hourFlip.delegate = self;
+    [self.hourFlip setFrame:CGRectMake(0, 0, self.hourView.frame.size.width, self.hourView.frame.size.height)];
     [self.hourFlip setIntValue:dateComps.hour];
     [self.hourFlip setMaximumValue:23];
-    [self.hourFlip setFrame:CGRectMake(0, 0, self.hourView.frame.size.width, self.hourView.frame.size.height)];
     [self.hourView addSubview:self.hourFlip];
+    NSLog(@"%d",dateComps.hour);
+
 
     self.ctimer = [NSTimer scheduledTimerWithTimeInterval:1.0f
                                               target:self
@@ -110,6 +142,19 @@
     
     NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
     NSLog(@"count:%d",[notifications count]);
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (self.observFlag == NO) {
+        // バックグラウンド復帰時の時計合わせ処理
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(applicationDidBecomeActive)
+                                                     name:@"applicationDidBecomeActive"
+                                                   object:nil];
+        self.observFlag = YES;
+    }
 }
 
 - (void)timerDidEnd
@@ -165,6 +210,9 @@
     
     [_pickerBaseView release];
     [_datepicker release];
+    
+     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"applicationDidBecomeActive" object:nil];
+    
     [super dealloc];
 }
 @end

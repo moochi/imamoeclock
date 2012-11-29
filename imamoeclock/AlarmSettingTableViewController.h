@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#define OBJECT_KEY @"objectID"
-
 @interface AlarmSettingTableViewController : UITableViewController
 
 @end

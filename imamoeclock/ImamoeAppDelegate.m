@@ -9,7 +9,7 @@
 #import "ImamoeAppDelegate.h"
 
 #import "ImamoeViewController.h"
-
+#import "Timer.h"
 
 @implementation ImamoeAppDelegate
 
@@ -25,8 +25,29 @@
                                delegate:self cancelButtonTitle:@"はい" otherButtonTitles:nil, nil] autorelease];
     [alert show];
     
-    [[UIApplication sharedApplication] cancelLocalNotification:notification];
-
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // 通知を処理
+        // [self setManyNotifitions];
+        NSDictionary *dic = [notification userInfo];
+        NSString *uri = [dic objectForKey:OBJECT_KEY];
+        
+        [[UIApplication sharedApplication] cancelLocalNotification:notification];
+        
+        NSManagedObjectContext *context = [self managedObjectContext];
+        NSPersistentStoreCoordinator *persistentStoreCoordinator = [context persistentStoreCoordinator];
+        NSURL *url = [[NSURL alloc] initWithString:uri];
+        NSManagedObjectID *objId = [persistentStoreCoordinator managedObjectIDForURIRepresentation:url];
+        NSError *error = nil;
+        Timer *timer = (Timer *)[context existingObjectWithID:objId error:&error];
+        timer.activeFlag = @NO;
+        
+        [self saveContext];
+        /*
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // メインスレッドでのみ実行可能な処理
+        });
+         */
+    });
 }
 
 - (void)dealloc
@@ -66,6 +87,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+     [[NSNotificationCenter defaultCenter] postNotificationName:@"applicationDidBecomeActive" object:nil];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
