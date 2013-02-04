@@ -33,6 +33,7 @@
 		C0C32941165B6D6800D37F2A /* AlarmSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3293F165B6D6800D37F2A /* AlarmSettingViewController.m */; };
 		C0C32942165B6D6800D37F2A /* AlarmSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0C32940165B6D6800D37F2A /* AlarmSettingViewController.xib */; };
 		C0C32948165B72EC00D37F2A /* UIViewController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C32947165B72EC00D37F2A /* UIViewController+Extend.m */; };
+		C0CE5B0616BF81D900050D87 /* UIDevice+Resolutions.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CE5B0516BF81D900050D87 /* UIDevice+Resolutions.m */; };
 		C0DAE276164114B100B1A7A9 /* dateTimeSetting.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0DAE275164114B100B1A7A9 /* dateTimeSetting.xib */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,8 @@
 		C0C32940165B6D6800D37F2A /* AlarmSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmSettingViewController.xib; sourceTree = "<group>"; };
 		C0C32946165B72EC00D37F2A /* UIViewController+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extend.h"; sourceTree = "<group>"; };
 		C0C32947165B72EC00D37F2A /* UIViewController+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extend.m"; sourceTree = "<group>"; };
+		C0CE5B0416BF81D900050D87 /* UIDevice+Resolutions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Resolutions.h"; sourceTree = "<group>"; };
+		C0CE5B0516BF81D900050D87 /* UIDevice+Resolutions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Resolutions.m"; sourceTree = "<group>"; };
 		C0DAE275164114B100B1A7A9 /* dateTimeSetting.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dateTimeSetting.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +146,8 @@
 				C0DAE275164114B100B1A7A9 /* dateTimeSetting.xib */,
 				C0C32946165B72EC00D37F2A /* UIViewController+Extend.h */,
 				C0C32947165B72EC00D37F2A /* UIViewController+Extend.m */,
+				C0CE5B0416BF81D900050D87 /* UIDevice+Resolutions.h */,
+				C0CE5B0516BF81D900050D87 /* UIDevice+Resolutions.m */,
 			);
 			path = imamoeclock;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				C0C3293B165B58D500D37F2A /* Timer.m in Sources */,
 				C0C32941165B6D6800D37F2A /* AlarmSettingViewController.m in Sources */,
 				C0C32948165B72EC00D37F2A /* UIViewController+Extend.m in Sources */,
+				C0CE5B0616BF81D900050D87 /* UIDevice+Resolutions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
